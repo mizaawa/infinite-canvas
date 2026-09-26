@@ -2,6 +2,7 @@ import axios, { type AxiosRequestConfig } from "axios";
 
 import i18n from "@/i18n";
 import { buildApiUrl, withLocalProxy, type AiConfig, type ModelCapability } from "@/stores/use-config-store";
+import { VIDEO_POLL_INTERVAL_MS, VIDEO_POLL_TIMEOUT_MS } from "./video-polling";
 
 type RequestOptions = { signal?: AbortSignal };
 
@@ -539,7 +540,7 @@ async function generateVideo({
       return null;
     },
     (result) => result,
-    { intervalMs: 2500, timeoutMs: 300000 },
+    { intervalMs: ${VIDEO_POLL_INTERVAL_MS}, timeoutMs: ${VIDEO_POLL_TIMEOUT_MS} },
   );
 }
 

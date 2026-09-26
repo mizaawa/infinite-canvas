@@ -1,0 +1,2 @@
+export const VIDEO_POLL_INTERVAL_MS = 10_000;
+export const VIDEO_POLL_TIMEOUT_MS = 40 * 60_000;
